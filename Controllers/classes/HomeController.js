@@ -5,7 +5,7 @@ class HomeController extends Controller{
         super();
     }
 
-    async index(req, res){
+    index(req, res){
         res.render('index');
     }
 }

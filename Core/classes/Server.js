@@ -1,4 +1,5 @@
 const express = require('express');
+const passport = require('passport-local');
 const routes = require('../../configs/routes');
 const controllers = require('../../Controllers');
 class Server {
@@ -19,9 +20,10 @@ class Server {
 
     init(){
         this.expressInstance.use(this.router);
-        this.expressInstance.use(express.static('../Views'));
+        //this.expressInstance.use(passport);
+        this.expressInstance.use(express.static('./Views'));
         this.expressInstance.set('view engine', 'ejs');
-        this.expressInstance.set('views', '../src/Views');
+        this.expressInstance.set('views', './Views');
         this.initControllers();
     }
 
